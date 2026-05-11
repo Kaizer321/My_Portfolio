@@ -1,4 +1,4 @@
-# Portfolio
+# 🎨 Muhammad Umar | Interactive 3D WebGL Portfolio
 
 <div align="center">
   <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react" alt="React" />
@@ -10,7 +10,7 @@
 
 <br/>
 
-Welcome to the open-source repository of **Tomasz "ITom" Szmajda's** interactive 3D Web Developer portfolio. This project pushes the limits of modern web technologies by blending spatial WebGL computing, complex React ecosystems, and highly optimized frontend engineering.
+Welcome to the open-source repository of **Muhammad Umar's** interactive 3D Web Developer portfolio. This project pushes the limits of modern web technologies by blending spatial WebGL computing, complex React ecosystems, and highly optimized frontend engineering.
 
 > [!NOTE]
 > Ensure hardware acceleration is enabled in your browser settings to experience the smooth 60 FPS high-tier rendering of this application.
@@ -56,8 +56,8 @@ To run this application natively on your local machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ITomPoland/portfolio-itom.git
-   cd portfolio-itom
+   git clone https://github.com/Kaizer321/My_Portfolio.git
+   cd portfolio-Umar
    ```
 
 2. **Install dependencies:**
@@ -86,4 +86,4 @@ All PRs improving the shader physics, 3D math logic, or component memoization ru
 
 ---
 
-
+*Designed and Developed by Muhammad Umar.*
