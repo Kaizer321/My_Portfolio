@@ -399,7 +399,7 @@ const ContactRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 rotation={[0, 0.2, 0]}
                 texturePath="/textures/contact/beczka.webp"
                 label="LINKEDIN"
-                onClick={() => window.open('https://www.linkedin.com/in/tomasz-szmajda-259337305/', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/muhammad-umer-1bb52326b', '_blank')}
                 paintOnBeforeCompile={onBeforeCompile}
                 paintUniforms={uniformsData}
             />
@@ -409,7 +409,7 @@ const ContactRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 rotation={[0, 0.3, 0]}
                 texturePath="/textures/contact/beczka.webp"
                 label="GITHUB"
-                onClick={() => window.open('https://github.com/ITomPoland', '_blank')}
+                onClick={() => window.open('https://github.com/Kaizer321', '_blank')}
                 paintOnBeforeCompile={onBeforeCompile}
                 paintUniforms={uniformsData}
             />
@@ -418,8 +418,8 @@ const ContactRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 position={isMobile ? [1.2, 0.5, -10] : [3, 0.5, -10]}
                 rotation={[0, -0.2, 0]}
                 texturePath="/textures/contact/beczka.webp"
-                label="FACEBOOK"
-                onClick={() => window.open('https://www.facebook.com/tomasz.szmajda.58/', '_blank')}
+                label="EMAIL"
+                onClick={() => window.open('mailto:cadetumar632@gamil.com', '_blank')}
                 paintOnBeforeCompile={onBeforeCompile}
                 paintUniforms={uniformsData}
             />
@@ -428,8 +428,8 @@ const ContactRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 position={isMobile ? [1.5, -0.3, -7] : [5, -0.3, -8]}
                 rotation={[0, -0.3, 0]}
                 texturePath="/textures/contact/beczka.webp"
-                label="INSTAGRAM"
-                onClick={() => window.open('https://www.instagram.com/itom.dev/', '_blank')}
+                label="UPWORK"
+                onClick={() => window.open('https://www.upwork.com', '_blank')}
                 paintOnBeforeCompile={onBeforeCompile}
                 paintUniforms={uniformsData}
             />

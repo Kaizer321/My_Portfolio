@@ -25,10 +25,13 @@ export const AUDIO_SETTINGS = {
 // Story sections - positions define where each milestone appears
 // Using CHUNK_LENGTH to create looping story (every ~40 units restarts)
 const STORY_MILESTONES = [
-    { id: 'intro', position: [0, 0, -15], type: 'intro', title: 'ITOM', subtitle: '< creative developer />' },
-    { id: 'awards', position: [0, 0, -55], type: 'awards', title: 'AWARDS', subtitle: '1x SOTD Winner • 1x CSS Winner' },
-    { id: 'journey', position: [0, 0, -95], type: 'journey', title: 'JOURNEY', subtitle: 'Computer Science @ University of Opole' },
-    { id: 'skills', position: [0, 0, -135], type: 'skills', title: 'SKILLS', subtitle: 'React • Three.js • GSAP • Creative Code' },
+    { id: 'intro', position: [0, 0, -15], type: 'intro', title: 'UMAR', subtitle: '< ai engineer />' },
+    { id: 'education', position: [0, 0, -45], type: 'journey', title: 'EDUCATION', subtitle: 'FAST-NUCES Islamabad • BS Artificial Intelligence • 2022–2026' },
+    { id: 'education2', position: [0, 0, -65], type: 'journey', title: 'GOLD MEDALIST', subtitle: 'Cadet College Swat • FSc Pre-Engineering • 2019–2021' },
+    { id: 'exp1', position: [0, 0, -90], type: 'awards', title: 'TECHABLE 360', subtitle: 'AI Intern • n8n Automation Workflows • Jun–Aug 2025' },
+    { id: 'exp2', position: [0, 0, -115], type: 'awards', title: 'EMPOWERBITS', subtitle: 'AI Intern • LangChain LLMs • A2A Protocol • May–Aug 2024' },
+    { id: 'projects', position: [0, 0, -140], type: 'awards', title: 'PROJECTS', subtitle: 'Genius PR • Angelica • SurveilX • PhishXplain' },
+    { id: 'skills', position: [0, 0, -170], type: 'skills', title: 'SKILLS', subtitle: 'Python • LangChain • n8n • Voice AI • CrewAI • React' },
 ];
 
 const AboutRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {

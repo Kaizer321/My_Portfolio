@@ -20,6 +20,7 @@ const _tempVec3 = new THREE.Vector3();
  */
 
 import { useAudio } from '../../../../context/AudioManager';
+import { getContentByPlatform } from '../Studio/contentData';
 
 export const BALLOON_AUDIO_SETTINGS = {
     volume: 1.0,
@@ -351,7 +352,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                TOMASZ SZMAJDA
+                MUHAMMAD UMAR
             </Text>
 
             {/* Subtitle - Brand (spreads right) */}
@@ -364,7 +365,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/CabinSketch-Regular.ttf"
             >
-                (ITOM)
+                (AI Engineer • FAST-NUCES '26)
             </Text>
 
             {/* Avatar on cloud - floating + spreads up-left */}
@@ -389,7 +390,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 font="/fonts/CabinSketch-Regular.ttf"
                 fontStyle="italic"
             >
-                "Crafting digital experiences
+                "Building production AI systems —
             </Text>
 
             {/* Motto - Line 2 (spreads left) */}
@@ -403,7 +404,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 font="/fonts/CabinSketch-Regular.ttf"
                 fontStyle="italic"
             >
-                that push creative boundaries"
+                Voice AI, n8n Automation & LLM Agents"
             </Text>
         </group>
     );
@@ -414,57 +415,63 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
  */
 const AWARDS_DATA = {
     featured: {
-        id: 'award-featured',
+        id: 'exp-featured',
         layout: 'certificate_grid',
-        title: 'Featured Projects Collection',
+        title: 'Client Projects',
         items: [
-            { label: 'Featured - Awwwards', date: 'May 2025', image: '/textures/about/FEATURED.webp', url: 'https://awwwards.com' },
-            { label: 'Featured - CSS Design Awards', date: 'June 2025', image: '/textures/about/FEATURED.webp', url: 'https://cssdesignawards.com' },
-            { label: 'Featured - The FWA', date: 'July 2025', image: '/textures/about/FEATURED.webp', url: 'https://thefwa.com' },
-            { label: 'Featured - Behance', date: 'August 2025', image: '/textures/about/FEATURED.webp', url: 'https://behance.net' },
+            { label: 'Genius PR — n8n Outreach', date: '2026', image: '/textures/gallery/geniuspr_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'Angelica — Voice AI', date: '2026', image: '/textures/gallery/angelica_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'Gym QA — Call Analysis', date: '2026', image: '/textures/gallery/gymreinforcements_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'Mano Swartz — Voice AI Sales', date: '2025', image: '/textures/gallery/manoswartz_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
         ],
         platformConfig: {
-            label: 'HONOR',
+            label: 'WORK',
             color: '#1a1a1a',
-            icon: '⭐'
+            icon: '💼'
         }
     },
     sotd: {
-        id: 'award-sotd',
+        id: 'exp-techable',
         layout: 'certificate_grid',
-        title: 'Site of the Day Awards',
+        title: 'Techable 360 — AI Intern',
         items: [
-            { label: 'SOTD - GSAP', date: 'February 13, 2026', image: '/textures/about/SOTDAYYOUNGMULTIGSAP.webp', url: 'https://www.linkedin.com/posts/greensock_site-of-the-day-young-multi-this-immersive-activity-7427567524940017664-zU2n?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE3TV6UBqXoaJXUN5-1s3ij6SQJwTRAcbCM' },
-            { label: 'SOTD - CSS Winner', date: 'January 24, 2026', image: '/textures/about/SOTDAYYOUNGMULTICSSWINNER.webp', url: 'https://www.csswinner.com/details/young-multi-official-experience/19045' },
-            { label: 'SOTD - Orpetron', date: 'January 29, 2026', image: '/textures/about/SOTDAYYOUNGMULTIORPETRON.webp', url: 'https://orpetron.com/sites/young-multi/' },
-            { label: 'SOTD - Design Nominess', date: 'February 17, 2026', image: '/textures/about/SOTDAYYOUNGMULTIDESIGNNOMINESS.webp', url: 'https://www.designnominees.com/sites/young-multi' }
+            { label: 'N8n automation workflows', date: 'Jun-Aug 2025', image: '/textures/gallery/geniuspr_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'External API integrations', date: 'Jun-Aug 2025', image: '/textures/gallery/angelica_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'Task pipeline optimization', date: 'Jun-Aug 2025', image: '/textures/gallery/gymreinforcements_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
         ],
         platformConfig: {
-            label: 'AWARD',
+            label: 'INTERN',
             color: '#1a1a1a',
-            icon: '🏆'
+            icon: '⚡'
         }
     },
     sotm: {
-        id: 'award-sotm',
+        id: 'exp-empowerbits',
         layout: 'certificate_grid',
-        title: 'Site of the Month Awards',
-        items: [],
+        title: 'EmpowerBits — AI Intern',
+        items: [
+            { label: 'LangChain LLM applications', date: 'May-Aug 2024', image: '/textures/gallery/mcpagent_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'MCP protocol integration', date: 'May-Aug 2024', image: '/textures/gallery/pdfassistant_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+            { label: 'A2A agent coordination', date: 'May-Aug 2024', image: '/textures/gallery/adversaryguard_front.webp', url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b' },
+        ],
         platformConfig: {
-            label: 'AWARD',
+            label: 'INTERN',
             color: '#1a1a1a',
-            icon: '📅'
+            icon: '🤖'
         }
     },
     soty: {
-        id: 'award-soty',
+        id: 'exp-freelance',
         layout: 'certificate_grid',
-        title: 'Site of the Year Awards',
-        items: [],
+        title: 'Freelance AI Engineer',
+        items: [
+            { label: 'Voice AI — Retell, Twilio', date: '2025-Present', image: '/textures/gallery/angelica_front.webp', url: 'https://www.upwork.com' },
+            { label: 'n8n Automation — HubSpot', date: '2025-Present', image: '/textures/gallery/geniuspr_front.webp', url: 'https://www.upwork.com' },
+        ],
         platformConfig: {
-            label: 'PRESTIGE',
+            label: 'FREELANCE',
             color: '#1a1a1a',
-            icon: '👑'
+            icon: '🚀'
         }
     }
 };
@@ -619,7 +626,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                AWARDS
+                EXPERIENCE
             </Text>
 
             {/* === SOTD (behind SOTY, rendered second) === */}
@@ -668,7 +675,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    SOTD
+                    TECHABLE 360
                 </Text>
                 {/* AWARD COUNT */}
                 <Text
@@ -679,7 +686,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    4
+                    2025
                 </Text>
             </group>
 
@@ -729,7 +736,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    SOTM
+                    EMPOWERBITS
                 </Text>
                 {/* AWARD COUNT */}
                 <Text
@@ -740,7 +747,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    0
+                    2024
                 </Text>
             </group>
 
@@ -789,7 +796,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    SOTY
+                    FREELANCE
                 </Text>
                 {/* AWARD COUNT */}
                 <Text
@@ -800,7 +807,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    0
+                    NOW
                 </Text>
             </group>
         </group>
@@ -898,7 +905,7 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                JOURNEY
+                EDUCATION
             </Text>
 
             {/* Subtitle */}
@@ -910,7 +917,7 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/CabinSketch-Regular.ttf"
             >
-                My path so far...
+                Where I learned...
             </Text>
 
             {/* === UO ISLAND (Left) === */}
@@ -932,7 +939,7 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    2025-NOW
+                    BS AI
                 </Text>
             </group>
 
@@ -955,7 +962,7 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    2023-NOW
+                    FSc (Pre-Eng)
                 </Text>
             </group>
         </group>
@@ -967,25 +974,40 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
  * Colorful balloons floating upward, each representing a skill
  */
 
-// Balloon configuration: size category, texture path, position offset
-// === EDYTUJ WYSOKOŚĆ TUTAJ (zmień wartość 'y' dla każdego balona) ===
-const BALLOON_CONFIG = [
-    // Large balloons (main skills) - front and center
-    { texture: '/textures/about/reactduzybalon.webp', paintedTexture: '/textures/about/reactduzybalon_painted.webp', label: 'React', size: 'large', x: -2.5, y: 2, z: 0.3, phase: 0 },
-    { texture: '/textures/about/threejsduzybalon.webp', paintedTexture: '/textures/about/threejsduzybalon_painted.webp', label: 'Three.js', size: 'large', x: 2.5, y: 2.5, z: 0.2, phase: 1.5 },
-    { texture: '/textures/about/GSAPduzybalon.webp', paintedTexture: '/textures/about/GSAPduzybalon_painted.webp', label: 'GSAP', size: 'large', x: 0, y: 3, z: 0.5, phase: 3 },
+// Build BALLOON_CONFIG dynamically from Studio 'skills' content
+// This ensures balloons match the Studio tab entries and use their front textures as icons.
+const buildBalloonConfigFromStudio = () => {
+    const skills = getContentByPlatform('skills');
+    // fallback positions (spread across area) - will be reused per index
+    const presetPositions = [
+        { x: -7.5, y: 4.6, z: 0.4, phase: 0.0 },
+        { x: -2.5, y: 5.0, z: 0.2, phase: 1.2 },
+        { x: 2.5, y: 4.7, z: 0.5, phase: 2.4 },
+        { x: 7.5, y: 5.1, z: 0.1, phase: 3.6 },
+        { x: -6.8, y: 2.7, z: -0.2, phase: 0.7 },
+        { x: -2.0, y: 2.9, z: -0.3, phase: 1.9 },
+        { x: 2.0, y: 2.6, z: -0.1, phase: 3.1 },
+        { x: 6.8, y: 2.8, z: -0.4, phase: 4.3 },
+        { x: -5.5, y: 0.8, z: -0.6, phase: 0.5 },
+        { x: -1.0, y: 1.1, z: -0.7, phase: 1.7 },
+        { x: 3.5, y: 0.9, z: -0.5, phase: 2.9 },
+        { x: 7.0, y: 1.2, z: -0.8, phase: 4.1 },
+    ];
 
-    // Medium balloons - scattered around
-    { texture: '/textures/about/JSSREDNIBALON.webp', paintedTexture: '/textures/about/JSSREDNIBALON_painted.webp', label: 'JavaScript', size: 'medium', x: -4, y: 1, z: -0.3, phase: 0.8 },
-    { texture: '/textures/about/csssrednibalon.webp', paintedTexture: '/textures/about/csssrednibalon_painted.webp', label: 'CSS', size: 'medium', x: 4, y: 1.5, z: -0.2, phase: 2.2 },
-    { texture: '/textures/about/nextjssrednibalon.webp', paintedTexture: '/textures/about/nextjssrednibalon_painted.webp', label: 'Next.js', size: 'medium', x: 0, y: 0.5, z: -0.4, phase: 4 },
+    return skills.map((item, idx) => {
+        const pos = presetPositions[idx % presetPositions.length];
+        return {
+            label: item.title,
+            size: 'medium',
+            x: pos.x,
+            y: pos.y,
+            z: pos.z,
+            phase: pos.phase,
+        };
+    });
+};
 
-    // Small balloons - background accents
-    { texture: '/textures/about/htmlmalybalon.webp', paintedTexture: '/textures/about/htmlmalybalon_painted.webp', label: 'HTML', size: 'small', x: -5.5, y: 2.5, z: -0.8, phase: 1.2 },
-    { texture: '/textures/about/gitmalybalon.webp', paintedTexture: '/textures/about/gitmalybalon_painted.webp', label: 'Git', size: 'small', x: 5.5, y: 3, z: -0.7, phase: 2.8 },
-    { texture: '/textures/about/figmamalybalon.webp', paintedTexture: '/textures/about/figmamalybalon_painted.webp', label: 'Figma', size: 'small', x: -3, y: 4.5, z: -0.5, phase: 3.5 },
-    { texture: '/textures/about/firebasemalybalon.webp', paintedTexture: '/textures/about/firebasemalybalon_painted.webp', label: 'Firebase', size: 'small', x: 3.5, y: 4, z: -0.6, phase: 4.5 },
-];
+const BALLOON_CONFIG = buildBalloonConfigFromStudio();
 
 // Size multipliers for balloon categories
 const SIZE_MULTIPLIERS = {
@@ -994,228 +1016,55 @@ const SIZE_MULTIPLIERS = {
     small: 1.6,
 };
 
-// Individual balloon component
+// Individual cloud component
 const SkillBalloon = ({ config, revealFactorRef, spreadFactorRef, timeRef }) => {
-    const { viewport } = useThree();
+    const { camera } = useThree();
     const isTouch = isTouchDevice();
-    const texture = useLoader(THREE.TextureLoader, config.texture);
-    const paintedTextureUrl = isTouch ? config.texture : config.paintedTexture;
-    const paintedTexture = useLoader(THREE.TextureLoader, paintedTextureUrl);
-    texture.colorSpace = THREE.SRGBColorSpace;
-    paintedTexture.colorSpace = THREE.SRGBColorSpace;
-
-    const [isPopping, setIsPopping] = useState(false);
     const [hovered, setHovered] = useState(false);
-    const [isFadingOutText, setIsFadingOutText] = useState(false);
-    const popRef = useRef(0);
-    const textFadeRef = useRef(1); // 1 = fully visible, 0 = hidden
-    const respawnOffsetRef = useRef(0); // For floating back up after respawn
-    const balloonMatRef = useRef();
-    const balloonRevealRef = useRef(); // RevealBasicMaterial ref for sketch
-    const paintedMeshRef = useRef(); // Painted balloon mesh visibility
-    const paintedMatRef = useRef(); // Painted balloon material opacity control
-    const hideDelayRef = useRef(); // Track pending gsap.delayedCall
-    const textRef = useRef();
-
-    // Audio Ref
-    const balloonAudioRef = useRef();
-    const { globalVolume, isMuted } = useAudio();
-
-    const playBalloonSound = () => {
-        if (balloonAudioRef.current) {
-            const vol = isMuted ? 0 : BALLOON_AUDIO_SETTINGS.volume * globalVolume;
-            balloonAudioRef.current.setVolume(vol);
-            if (balloonAudioRef.current.isPlaying) balloonAudioRef.current.stop();
-            balloonAudioRef.current.play();
-        }
-    };
-
-    // LEGACY FIX: Use original aspect ratios from BALLOON_CONFIG or hardcoded for categories
-    const legacyAspects = {
-        'reactduzybalon.webp': 736 / 1447,
-        'threejsduzybalon.webp': 1141 / 1964,
-        'GSAPduzybalon.webp': 1.0, // GSAP balloon is square
-        'default_small_medium': 631 / 1482 // Common ratio for others
-    };
-    
-    const filename = config.texture.split('/').pop();
-    const aspect = legacyAspects[filename] || legacyAspects['default_small_medium'];
-    const baseHeight = SIZE_MULTIPLIERS[config.size];
-
     const outerGroupRef = useRef();
     const innerGroupRef = useRef();
+    const textRef = useRef();
     const targetScale = useRef(1.0);
     const currentScale = useRef(1.0);
-    const targetMagnet = useRef({ x: 0, y: 0 });
-    const currentMagnet = useRef({ x: 0, y: 0 });
 
-    // === RESPONSYWNOŚĆ ===
-    // Na mobile (wąski viewport) balony są bliżej środka
-    const positionScale = isTouch ? 0.5 : 1; // Jak bardzo ściskamy pozycje na mobile
-    const spreadScale = isTouch ? 0.4 : 1;   // Jak bardzo zmniejszamy spread na mobile
-    const sizeScale = isTouch ? 0.85 : 1;    // Trochę mniejsze balony na mobile
+    const baseHeight = SIZE_MULTIPLIERS[config.size];
+    const positionScale = isTouch ? 0.5 : 1;
+    const spreadScale = isTouch ? 0.4 : 1;
+    const sizeScale = isTouch ? 0.92 : 1;
 
-    // Cursor handling
+    const cloudPuffs = useMemo(() => {
+        return [
+            { x: -1.1, y: -0.05, r: 0.58 },
+            { x: -0.62, y: 0.22, r: 0.76 },
+            { x: -0.05, y: 0.34, r: 0.95 },
+            { x: 0.58, y: 0.24, r: 0.84 },
+            { x: 1.14, y: -0.02, r: 0.62 },
+            { x: -0.38, y: -0.22, r: 0.78 },
+            { x: 0.28, y: -0.2, r: 0.88 },
+        ];
+    }, []);
+
     useEffect(() => {
-        if (hovered && !isPopping) {
-            document.body.style.cursor = 'pointer';
-        } else {
-            document.body.style.cursor = 'auto';
-        }
-    }, [hovered, isPopping]);
+        document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    }, [hovered]);
 
-    // Handle text fade out timer
-    useEffect(() => {
-        if (isPopping) {
-            // Start fading out text after 3 seconds
-            const timer = setTimeout(() => {
-                setIsFadingOutText(true);
-            }, 3000);
-            return () => clearTimeout(timer);
-        }
-    }, [isPopping]);
-
-    // Hover handlers for brush-stroke reveal
-    const handlePointerOver = (e) => {
-        if (isTouch) return;
-        e.stopPropagation();
-        if (!isPopping) setHovered(true);
-
-        // Brush-stroke reveal: show painted balloon
-        if (balloonRevealRef.current) {
-            gsap.to(balloonRevealRef.current, {
-                uProgress: 1.0,
-                duration: 0.8,
-                ease: 'power2.out',
-                overwrite: true
-            });
-        }
-        if (hideDelayRef.current) hideDelayRef.current.kill();
-        if (paintedMeshRef.current) paintedMeshRef.current.visible = true;
-        if (paintedMatRef.current) paintedMatRef.current.opacity = 1;
-    };
-
-    const handlePointerOut = (e) => {
-        if (isTouch) return;
-        e.stopPropagation();
-        setHovered(false);
-
-        // Reverse reveal
-        if (balloonRevealRef.current) {
-            gsap.to(balloonRevealRef.current, {
-                uProgress: 0.0,
-                duration: 0.5,
-                ease: 'power2.out',
-                overwrite: true
-            });
-        }
-        hideDelayRef.current = gsap.delayedCall(0.55, () => {
-            if (paintedMatRef.current) paintedMatRef.current.opacity = 0;
-        });
-    };
-
-    // Animation update loop
     useFrame((state, delta) => {
-        if (hovered && !isPopping) {
-            targetScale.current = 1.05; // lekkie powiększenie
-        } else {
-            targetScale.current = 1.0;
-            targetMagnet.current.x = 0;
-            targetMagnet.current.y = 0;
-        }
-
-        currentScale.current = THREE.MathUtils.lerp(currentScale.current, targetScale.current, 8 * delta);
-        currentMagnet.current.x = THREE.MathUtils.lerp(currentMagnet.current.x, targetMagnet.current.x, 8 * delta);
-        currentMagnet.current.y = THREE.MathUtils.lerp(currentMagnet.current.y, targetMagnet.current.y, 8 * delta);
-
-        if (isPopping) {
-            // Smooth, slow pop animation
-            popRef.current = THREE.MathUtils.lerp(popRef.current, 1, 2.5 * delta);
-
-            // Also hide painted mesh during pop (kill any pending reveals)
-            if (hideDelayRef.current) hideDelayRef.current.kill();
-            if (balloonRevealRef.current) {
-                balloonRevealRef.current.uProgress = 0;
-            }
-        }
-
-        if (isFadingOutText) {
-            // Fade out the text slowly
-            textFadeRef.current = THREE.MathUtils.lerp(textFadeRef.current, 0, 2 * delta);
-
-            // Once fully faded, respawn the balloon from below
-            if (textFadeRef.current < 0.05) {
-                setIsPopping(false);
-                setHovered(false);
-                setIsFadingOutText(false);
-                popRef.current = 0;
-                textFadeRef.current = 1;
-                respawnOffsetRef.current = -12; // Teleport below to float up again
-
-                // Immediately teleport the mesh to prevent pointer events at the old location
-                if (outerGroupRef.current) {
-                    outerGroupRef.current.position.y -= 12;
-                }
-
-                // Immediately reset opacities to prevent flashing
-                if (balloonRevealRef.current) balloonRevealRef.current.opacity = 1;
-                if (textRef.current) textRef.current.fillOpacity = 0;
-                // Reset reveal state on respawn
-                if (balloonRevealRef.current) balloonRevealRef.current.uProgress = 0;
-                if (paintedMatRef.current) paintedMatRef.current.opacity = 0;
-                if (paintedMeshRef.current) paintedMeshRef.current.visible = false;
-            }
-        }
-
-        // Float back up if respawning
-        if (respawnOffsetRef.current < -0.01) {
-            respawnOffsetRef.current = THREE.MathUtils.lerp(respawnOffsetRef.current, 0, 1.5 * delta);
-        }
-
-        // Apply opacities if not fully respawned
-        if (balloonRevealRef.current && isPopping) {
-            balloonRevealRef.current.opacity = 1 - popRef.current;
-        }
-        if (paintedMatRef.current && isPopping) {
-            paintedMatRef.current.opacity = 1 - popRef.current;
-        }
-        if (textRef.current && isPopping) {
-            // Combine pop-in and fade-out opacities
-            textRef.current.fillOpacity = popRef.current * textFadeRef.current;
-            textRef.current.outlineOpacity = popRef.current * textFadeRef.current;
-        }
-    });
-
-    // Floating animation with unique phase — now computed inside useFrame
-    // Moved from render body to avoid re-renders
-
-    // Bazowa pozycja X (skalowana na mobile)
-    const baseX = config.x * positionScale;
-
-    // P2: Compute position/scale/rotation imperatively inside useFrame
-    useFrame(() => {
         if (!outerGroupRef.current) return;
 
         const time = timeRef.current;
         const revealFactor = revealFactorRef.current;
         const spreadFactor = spreadFactorRef.current;
 
-        // Floating animation with unique phase
         const floatY = Math.sin(time * 0.6 + config.phase) * 0.3;
-        const floatX = Math.sin(time * 0.4 + config.phase * 0.7) * 0.15;
-        const rotation = Math.sin(time * 0.3 + config.phase) * 0.08;
+        const floatX = Math.sin(time * 0.4 + config.phase * 0.7) * 0.12;
 
-        // Reveal: balloons float up from below, including respawn offset
         const startY = config.y - 8;
         const endY = config.y;
-        const currentY = startY + revealFactor * (endY - startY) + floatY + respawnOffsetRef.current;
+        const currentY = startY + revealFactor * (endY - startY) + floatY;
 
-        // Scale up as they reveal
-        let scale = revealFactor * sizeScale;
-        const popScaleEffect = currentScale.current + popRef.current * 0.4;
-        scale *= popScaleEffect;
+        targetScale.current = hovered ? 1.06 : 1.0;
+        currentScale.current = THREE.MathUtils.lerp(currentScale.current, targetScale.current, 8 * delta);
 
-        // === SPREAD EFFECT (ROZSUWANIE) ===
         const maxSpread = 15 * spreadScale;
         let spreadX = 0;
 
@@ -1229,98 +1078,74 @@ const SkillBalloon = ({ config, revealFactorRef, spreadFactorRef, timeRef }) => 
                 : -spreadFactor * maxSpread * 0.8;
         }
 
-        // Apply imperatively
-        outerGroupRef.current.position.set(baseX + floatX + spreadX, currentY, config.z);
-        outerGroupRef.current.rotation.z = rotation;
-        const s = Math.max(0.001, scale); // Avoid zero scale
-        outerGroupRef.current.scale.set(s, s, s);
+        const baseX = config.x * positionScale;
+        const scale = Math.max(0.001, revealFactor * sizeScale * currentScale.current);
 
-        // Update magnet position on inner group imperatively
-        if (innerGroupRef.current) {
-            innerGroupRef.current.position.set(currentMagnet.current.x, currentMagnet.current.y, 0);
+        outerGroupRef.current.position.set(baseX + floatX + spreadX, currentY, config.z);
+        outerGroupRef.current.scale.set(scale, scale, scale);
+        outerGroupRef.current.lookAt(camera.position);
+
+        if (textRef.current) {
+            textRef.current.quaternion.copy(camera.quaternion);
         }
     });
 
     return (
-        <group
-            ref={outerGroupRef}
-            position={[baseX, config.y - 8, config.z]}
-        >
+        <group ref={outerGroupRef} position={[config.x * positionScale, config.y - 8, config.z]}>
             <group ref={innerGroupRef}>
-                {/* Painted balloon (behind) - hidden until hover */}
-                <mesh ref={paintedMeshRef} visible={true}>
-                    <planeGeometry args={[baseHeight * aspect, baseHeight]} />
-                    <meshBasicMaterial color="#e0e0e0"
-                        ref={paintedMatRef}
-                        map={paintedTexture}
-                        transparent
-                        opacity={0}
-                        side={THREE.DoubleSide}
-                        alphaTest={0.5}
-                        depthWrite={false}
-                    />
+                {/* Soft shadow */}
+                <mesh position={[0.08, -0.09, -0.02]}>
+                    <circleGeometry args={[Math.max(0.4, baseHeight * 0.72), 64]} />
+                    <meshBasicMaterial color="#000000" transparent opacity={0.08} side={THREE.DoubleSide} depthWrite={false} />
                 </mesh>
 
-                {/* Sketch balloon (front) with brush-stroke reveal */}
-                <mesh
-                    position={[0, 0, 0.001]}
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        if (!isPopping) {
-                            setIsPopping(true);
-                            playBalloonSound();
-                        }
-                    }}
-                    onPointerOver={handlePointerOver}
-                    onPointerOut={handlePointerOut}
-                    onPointerMove={(e) => {
-                        if (hovered && !isPopping && outerGroupRef.current) {
-                            outerGroupRef.current.getWorldPosition(_tempVec3);
-                            // Reduced magnetic pull from 0.5 to 0.15 for gentler effect
-                            targetMagnet.current.x = (e.point.x - _tempVec3.x) * 0.15;
-                            targetMagnet.current.y = (e.point.y - _tempVec3.y) * 0.15;
-                        }
-                    }}
-                    visible={popRef.current < 0.99}
+                {/* Cloud body */}
+                <group>
+                    {cloudPuffs.map((puff, index) => (
+                        <group key={index} position={[puff.x * baseHeight, puff.y * baseHeight, puff.r * 0.01]}>
+                            <mesh scale={[1.08, 1.08, 1]}>
+                                <circleGeometry args={[puff.r * baseHeight * 0.62, 48]} />
+                                <meshBasicMaterial color="#2d2d2d" transparent opacity={0.22} side={THREE.DoubleSide} depthWrite={false} />
+                            </mesh>
+                            <mesh position={[0, 0, -0.02]}>
+                            <circleGeometry args={[puff.r * baseHeight * 0.62, 48]} />
+                            <meshStandardMaterial
+                                color={index === 2 ? '#ffffff' : '#f4f4f2'}
+                                transparent
+                                opacity={0.98}
+                                side={THREE.DoubleSide}
+                                roughness={0.98}
+                                metalness={0.0}
+                                depthWrite={false}
+                            />
+                            </mesh>
+                        </group>
+                    ))}
+                </group>
+
+                {/* Outline */}
+                <mesh>
+                    <circleGeometry args={[Math.max(0.4, baseHeight * 1.0), 64]} />
+                    <meshBasicMaterial color="#1f1f1f" transparent opacity={0.14} side={THREE.DoubleSide} depthWrite={false} />
+                </mesh>
+
+                {/* Skill label inside cloud */}
+                <Text
+                    ref={textRef}
+                    position={[0, 0.02, 0.28]}
+                    fontSize={baseHeight * 0.18}
+                    color="#ffffff"
+                    anchorX="center"
+                    anchorY="middle"
+                    font="/fonts/CabinSketch-Bold.ttf"
+                    renderOrder={20}
+                    fillOpacity={1}
+                    outlineWidth={0.045}
+                    outlineColor="#1a1a1a"
+                    outlineOpacity={1}
                 >
-                    <planeGeometry args={[baseHeight * aspect, baseHeight]} />
-                    <revealBasicMaterial
-                        ref={balloonRevealRef}
-                        map={texture}
-                        transparent
-                        side={THREE.DoubleSide}
-                        depthWrite={false}
-                        uProgress={0.0}
-                    />
-                </mesh>
-
-                {/* Stack Name Text that fades in then out */}
-                {isPopping && textFadeRef.current > 0.01 && (
-                    <Text
-                        ref={textRef}
-                        position={[0, 0, 0.1]}
-                        fontSize={baseHeight * 0.4}
-                        color="#1a1a1a"
-                        anchorX="center"
-                        anchorY="middle"
-                        font="/fonts/RubikScribble-Regular.ttf"
-                        fillOpacity={0}
-                        outlineWidth={0.02}
-                        outlineColor="#fff"
-                        outlineOpacity={0}
-                    >
-                        {config.label}
-                    </Text>
-                )}
-
-                <PositionalAudio
-                    ref={balloonAudioRef}
-                    url="/sounds/baloonpoop.mp3"
-                    distanceModel="exponential"
-                    rolloffFactor={BALLOON_AUDIO_SETTINGS.rolloff}
-                    refDistance={BALLOON_AUDIO_SETTINGS.distance}
-                    loop={false}
-                />
+                    {config.label}
+                </Text>
             </group>
         </group>
     );

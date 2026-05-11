@@ -34,45 +34,155 @@ export const GALLERY_INTERACTION_AUDIO_SETTINGS = {
 
 // Define the unique projects and their textures
 const UNIQUE_PROJECTS = [
+    // === CLIENT PROJECTS ===
     {
-        id: 'monetune',
-        title: 'MONETUNE',
-        front: '/textures/gallery/monetuneprzod.webp',
-        painted: '/textures/gallery/monetuneprzod_painted.webp',
-        url: 'https://monetune.pl',
-        description: 'MoneTune is a step-by-step blueprint that teaches beginners how to generate passive income using AI-created music. Without any musical skills, you will learn how to easily produce professional tracks, publish them on platforms like Spotify, and monetize your digital assets.',
-        techStack: ['/textures/gallery/wordpresslogo.webp', '/textures/gallery/elementorlogo.webp', '/textures/gallery/phplogo.webp', '/textures/gallery/csslogo.webp']
+        id: 'geniuspr',
+        title: 'GENIUS PR',
+        front: '/textures/gallery/geniuspr_front.webp',
+        painted: '/textures/gallery/geniuspr_front_painted.webp',
+        url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b',
+        description: 'Multi-workflow n8n outreach automation for a PR agency. HubSpot, HeyReach, Instantly, Claude AI — reply classification, meeting booking, full sales pipeline.',
+        techStack: ['/textures/gallery/n8nlogo.webp', '/textures/gallery/hubspotlogo.webp', '/textures/gallery/claudelogo.webp', '/textures/gallery/pythonlogo.webp']
     },
     {
-        id: 'timber',
-        title: 'TIMBERKITTY',
-        front: '/textures/gallery/timberkittyprzod.webp',
-        painted: '/textures/gallery/timberkittyprzod_painted.webp',
-        url: 'https://timberkitty.netlify.app',
-        description: 'TimberKitty is an addictive, free-to-play browser arcade game built in pure JavaScript. Players control a lumberjack cat to chop wood, save birds, complete daily missions, and compete on global leaderboards.',
-        techStack: ['/textures/gallery/jslogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp', '/textures/gallery/firebaselogo.webp']
+        id: 'angelica',
+        title: 'ANGELICA',
+        front: '/textures/gallery/angelica_front.webp',
+        painted: '/textures/gallery/angelica_front_painted.webp',
+        url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b',
+        description: 'Voice AI receptionist for ServiceMaxPro. Retell AI inbound calls, Cal.com v2 booking, Twilio SMS, Gmail follow-ups — full post-call automation.',
+        techStack: ['/textures/gallery/retelllogo.webp', '/textures/gallery/twiliologo.webp', '/textures/gallery/calcomlogo.webp', '/textures/gallery/gmaillogo.webp']
     },
     {
-        id: 'young',
-        title: 'YOUNG MULTI',
-        front: '/textures/gallery/youngmultiprzod.webp',
-        painted: '/textures/gallery/youngmultiprzod_painted.webp',
-        url: 'https://young-multi-strona.netlify.app',
-        description: 'A sleek, modern concept website dedicated to the Polish rapper and creator Young Multi. It serves as a promotional landing page designed to highlight his personal brand, music, and online presence.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/tailwindlogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/netlifylogo.webp']
+        id: 'gymreinforcements',
+        title: 'GYM QA',
+        front: '/textures/gallery/gymreinforcements_front.webp',
+        painted: '/textures/gallery/gymreinforcements_front_painted.webp',
+        url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b',
+        description: 'Gym franchise call QA automation. Twilio recordings → OpenAI Whisper transcription → GPT-4o compliance analysis → Gmail + Slack alerts.',
+        techStack: ['/textures/gallery/whisperlogo.webp', '/textures/gallery/gptlogo.webp', '/textures/gallery/twiliologo.webp', '/textures/gallery/slacklogo.webp']
     },
     {
-        id: 'bio',
-        title: 'BIO',
-        front: '/textures/gallery/bioprzod.webp',
-        painted: '/textures/gallery/bioprzod_painted.webp',
-        url: 'https://tomkingbio.netlify.app',
-        description: 'A fast, modern personal bio page serving as a central hub for my digital footprint. It showcases my latest coding projects, web development services, YouTube videos, and recommended music artists.',
-        techStack: ['/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/netlifylogo.webp']
+        id: 'manoswartz',
+        title: 'MANO SWARTZ',
+        front: '/textures/gallery/manoswartz_front.webp',
+        painted: '/textures/gallery/manoswartz_front_painted.webp',
+        url: 'https://www.linkedin.com/in/muhammad-umer-1bb52326b',
+        description: 'Retell AI inbound Voice AI agent for a fur coat sales business. Natural conversation, lead qualification, appointment booking.',
+        techStack: ['/textures/gallery/retelllogo.webp', '/textures/gallery/pythonlogo.webp', '/textures/gallery/calcomlogo.webp', '/textures/gallery/n8nlogo.webp']
+    },
+    // === GITHUB PROJECTS ===
+    {
+        id: 'phishxplain',
+        title: 'PHISHXPLAIN',
+        front: '/textures/gallery/phishxplain_front.webp',
+        painted: '/textures/gallery/phishxplain_front_painted.webp',
+        url: 'https://github.com/Kaizer321/PhishXplain',
+        description: 'AI phishing detection with SHAP explainability. Full ML pipeline deployed on HuggingFace Spaces. IEEE-format research paper included.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/shaplogo.webp', '/textures/gallery/hflogo.webp', '/textures/gallery/reactlogo.webp']
+    },
+    {
+        id: 'surveilx',
+        title: 'SURVEILX',
+        front: '/textures/gallery/surveilx_front.webp',
+        painted: '/textures/gallery/surveilx_front_painted.webp',
+        url: 'https://github.com/Kaizer321/SurveilX',
+        description: 'AI surveillance platform — multi-camera anomaly detection with YOLOv8 + CLIP visual prompting. Natural language video search + H.264 clip generation.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/yolologo.webp', '/textures/gallery/cliplogo.webp', '/textures/gallery/opencvlogo.webp']
+    },
+    {
+        id: 'voyant',
+        title: 'VOYANT TRAVEL',
+        front: '/textures/gallery/voyant_front.webp',
+        painted: '/textures/gallery/voyant_front_painted.webp',
+        url: 'https://github.com/Kaizer321/Voyant-Travel-Planner',
+        description: '5 specialized AI agents orchestrated by a Meta-Agent using CrewAI + Gemini. Generates complete travel itineraries with flights, hotels, and activities.',
+        techStack: ['/textures/gallery/crewailogo.webp', '/textures/gallery/geminilogo.webp', '/textures/gallery/pythonlogo.webp', '/textures/gallery/langchainlogo.webp']
+    },
+    {
+        id: 'mcpagent',
+        title: 'MCP AGENT',
+        front: '/textures/gallery/mcpagent_front.webp',
+        painted: '/textures/gallery/mcpagent_front_painted.webp',
+        url: 'https://github.com/Kaizer321/MCP_agentic_AI',
+        description: 'Interactive chat agent with MCP servers for web search & browser control. Built with LangChain and Gemini for autonomous tool use.',
+        techStack: ['/textures/gallery/langchainlogo.webp', '/textures/gallery/geminilogo.webp', '/textures/gallery/pythonlogo.webp', '/textures/gallery/seleniumlogo.webp']
+    },
+    {
+        id: 'story2audio',
+        title: 'STORY2AUDIO',
+        front: '/textures/gallery/story2audio_front.webp',
+        painted: '/textures/gallery/story2audio_front_painted.webp',
+        url: 'https://github.com/Kaizer321/Story2Audio',
+        description: 'Converting stories into lifelike narrations using the Dia Model with gRPC streaming. Full text-to-speech audio pipeline.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/grpclogo.webp', '/textures/gallery/dialoglogo.webp', '/textures/gallery/fastapilogo.webp']
+    },
+    {
+        id: 'pdfassistant',
+        title: 'PDF ASSISTANT',
+        front: '/textures/gallery/pdfassistant_front.webp',
+        painted: '/textures/gallery/pdfassistant_front_painted.webp',
+        url: 'https://github.com/Kaizer321/Pdf_assistant',
+        description: 'AI-powered PDF chatbot using RAG pipeline. Upload PDFs, ask questions in natural language, get accurate answers with citations.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/langchainlogo.webp', '/textures/gallery/fastapilogo.webp', '/textures/gallery/reactlogo.webp']
+    },
+    {
+        id: 'excelchatbot',
+        title: 'EXCEL CHATBOT',
+        front: '/textures/gallery/excelchatbot_front.webp',
+        painted: '/textures/gallery/excelchatbot_front_painted.webp',
+        url: 'https://github.com/Kaizer321/Excel-Chatbot',
+        description: 'Natural language interface for Excel data analysis. Ask questions about your spreadsheets and get instant AI-powered answers.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/langchainlogo.webp', '/textures/gallery/gptlogo.webp', '/textures/gallery/flasklogo.webp']
+    },
+    {
+        id: 'adversaryguard',
+        title: 'ADVERSARYGUARD',
+        front: '/textures/gallery/adversaryguard_front.webp',
+        painted: '/textures/gallery/adversaryguard_front_painted.webp',
+        url: 'https://github.com/Kaizer321/adversaryguard',
+        description: 'Adversarial attack detection and defense for ML models. FGSM implementation, robustness testing, and model hardening techniques.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/hflogo.webp', '/textures/gallery/reactlogo.webp', '/textures/gallery/fastapilogo.webp']
+    },
+    {
+        id: 'fgsm',
+        title: 'FGSM ATTACK',
+        front: '/textures/gallery/fgsm_front.webp',
+        painted: '/textures/gallery/fgsm_front_painted.webp',
+        url: 'https://github.com/Kaizer321/Fast-Gradient-Sign-Method-FGSM',
+        description: 'Fast Gradient Sign Method implementation for adversarial attacks on neural networks. Interactive visualization of attack effects.',
+        techStack: ['/textures/gallery/tslogo.webp', '/textures/gallery/reactlogo.webp', '/textures/gallery/pythonlogo.webp', '/textures/gallery/hflogo.webp']
+    },
+    {
+        id: 'saasboilerplate',
+        title: 'SAAS STARTER',
+        front: '/textures/gallery/saasboilerplate_front.webp',
+        painted: '/textures/gallery/saasboilerplate_front_painted.webp',
+        url: 'https://github.com/Kaizer321/saas-boilerplate',
+        description: 'Production-ready SaaS boilerplate with authentication, billing, dashboards, and multi-tenancy. TypeScript + Next.js stack.',
+        techStack: ['/textures/gallery/tslogo.webp', '/textures/gallery/nextjslogo.webp', '/textures/gallery/stripelogo.webp', '/textures/gallery/reactlogo.webp']
+    },
+    {
+        id: 'carpoolpk',
+        title: 'CARPOOL PK',
+        front: '/textures/gallery/carpoolpk_front.webp',
+        painted: '/textures/gallery/carpoolpk_front_painted.webp',
+        url: 'https://github.com/Kaizer321/CarPool-PK',
+        description: 'Ride-sharing platform for Pakistan. Match riders and drivers, split costs, track rides in real-time with a modern web interface.',
+        techStack: ['/textures/gallery/tslogo.webp', '/textures/gallery/reactlogo.webp', '/textures/gallery/nodelogo.webp', '/textures/gallery/nextjslogo.webp']
+    },
+    {
+        id: 'projectphase1',
+        title: 'PROJECT P1',
+        front: '/textures/gallery/projectphase1_front.webp',
+        painted: '/textures/gallery/projectphase1_front_painted.webp',
+        url: 'https://github.com/Kaizer321/Project-phase-1',
+        description: 'AI research project — Phase 1 implementation covering data preprocessing, model training, and evaluation pipeline.',
+        techStack: ['/textures/gallery/pythonlogo.webp', '/textures/gallery/hflogo.webp', '/textures/gallery/gptlogo.webp', '/textures/gallery/fastapilogo.webp']
     },
 ];
 
-const PROJECT_COUNT = 10; // Keep the count for the infinite scroll feel
+const PROJECT_COUNT = 16;
 const GAP = 2.5;
 
 // Zmień te wartości aby dopasować proporcje ptaka (legacy ratio 1.41)
@@ -230,13 +340,16 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
     // We use the same conditional logic: painted on desktop, regular on touch
     const allLogos = useMemo(() => {
         const names = [
-            'csslogo', 'elementorlogo', 'firebaselogo', 'htmllogo',
-            'jslogo', 'netlifylogo', 'phplogo', 'reactlogo',
-            'tailwindlogo', 'wordpresslogo'
+            'pythonlogo', 'n8nlogo', 'hubspotlogo', 'claudelogo',
+            'retelllogo', 'twiliologo', 'calcomlogo', 'gmaillogo',
+            'yolologo', 'cliplogo', 'shaplogo', 'hflogo', 'reactlogo',
+            'crewailogo', 'geminilogo', 'langchainlogo', 'slacklogo',
+            'whisperlogo', 'gptlogo', 'tslogo', 'nextjslogo', 'stripelogo',
+            'nodelogo', 'opencvlogo', 'flasklogo', 'fastapilogo',
+            'grpclogo', 'dialoglogo', 'seleniumlogo'
         ];
         return names.map(name => {
             if (!canHover) return `/textures/gallery/${name}.webp`;
-            if (name === 'csslogo') return `/textures/gallery/css3logo_painted.webp`;
             return `/textures/gallery/${name}_painted.webp`;
         });
     }, [canHover]);
@@ -272,7 +385,6 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
             const techStack = projectData.techStack.map(path => {
                 if (!canHover) return path; // Keep regular
                 const name = path.split('/').pop().replace('.webp', '');
-                if (name === 'csslogo') return '/textures/gallery/css3logo_painted.webp';
                 return `/textures/gallery/${name}_painted.webp`;
             });
 

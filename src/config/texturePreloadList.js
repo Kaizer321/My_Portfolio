@@ -137,31 +137,62 @@ export const GALLERY_TEXTURES_BASE = [
 
 export const GALLERY_TEXTURES_VERSIONED = [
     // Project cards
-    'monetuneprzod',
-    'timberkittyprzod',
-    'youngmultiprzod',
-    'bioprzod',
+    'geniuspr_front',
+    'angelica_front',
+    'gymreinforcements_front',
+    'manoswartz_front',
+    'phishxplain_front',
+    'surveilx_front',
+    'voyant_front',
+    'mcpagent_front',
+    'story2audio_front',
+    'pdfassistant_front',
+    'excelchatbot_front',
+    'adversaryguard_front',
+    'fgsm_front',
+    'saasboilerplate_front',
+    'carpoolpk_front',
+    'projectphase1_front',
     // Card back
     'tylkartki',
     'przyciskdotylukartki',
     // Tech stack logos
-    'csslogo',
-    'elementorlogo',
-    'firebaselogo',
-    'htmllogo',
-    'jslogo',
-    'netlifylogo',
-    'phplogo',
+    'pythonlogo',
+    'n8nlogo',
+    'hubspotlogo',
+    'claudelogo',
+    'retelllogo',
+    'twiliologo',
+    'calcomlogo',
+    'gmaillogo',
+    'yolologo',
+    'cliplogo',
+    'shaplogo',
+    'hflogo',
     'reactlogo',
-    'tailwindlogo',
-    'wordpresslogo',
+    'crewailogo',
+    'geminilogo',
+    'langchainlogo',
+    'slacklogo',
+    'whisperlogo',
+    'gptlogo',
+    'tslogo',
+    'nextjslogo',
+    'stripelogo',
+    'nodelogo',
+    'opencvlogo',
+    'flasklogo',
+    'fastapilogo',
+    'grpclogo',
+    'dialoglogo',
+    'seleniumlogo',
 ];
 
 export const GALLERY_TEXTURES = [
     ...GALLERY_TEXTURES_BASE,
     ...GALLERY_TEXTURES_VERSIONED.flatMap(name => [
         `/textures/gallery/${name}.webp`,
-        name === 'csslogo' ? `/textures/gallery/css3logo_painted.webp` : `/textures/gallery/${name}_painted.webp`
+        `/textures/gallery/${name}_painted.webp`
     ])
 ];
 
@@ -234,7 +265,7 @@ export const ABOUT_TEXTURES = [
 
 // Studio Room textures (loaded via useLoader(TextureLoader))
 export const STUDIO_TEXTURES = [
-    // Monitor (blog)
+    // Monitor (GitHub)
     '/textures/studio/monitor_front.webp',
     '/textures/studio/monitor_front_painted.webp',
     '/textures/studio/monitor_back.webp',
@@ -247,7 +278,7 @@ export const STUDIO_TEXTURES = [
     '/textures/studio/monitor_left_painted.webp',
     '/textures/studio/monitor_right.webp',
     '/textures/studio/monitor_right_painted.webp',
-    // TV (youtube)
+    // TV (Clients)
     '/textures/studio/tv_front.webp',
     '/textures/studio/tv_front_painted.webp',
     '/textures/studio/tv_back.webp',
@@ -258,22 +289,28 @@ export const STUDIO_TEXTURES = [
     '/textures/studio/tv_bottom_painted.webp',
     '/textures/studio/tv_side.webp',
     '/textures/studio/tv_side_painted.webp',
-    // Phone (tiktok)
+    // Phone (Skills)
     '/textures/studio/phone_front.webp',
     '/textures/studio/phone_front_painted.webp',
     '/textures/studio/phone_back.webp',
     '/textures/studio/phone_back_painted.webp',
     '/textures/studio/phone_side.webp',
     '/textures/studio/phone_side_painted.webp',
-    // Custom content front textures
-    '/textures/studio/monitorfront_postnafbdoublewinner.webp',
-    '/textures/studio/monitorfront_postnafbdoublewinner_painted.webp',
-    '/textures/studio/phonefront_followmeontiktok.webp',
-    '/textures/studio/phonefront_followmeontiktok_painted.webp',
-    '/textures/studio/tvfront_filmikedytowaniezdjec.webp',
-    '/textures/studio/tvfront_filmikedytowaniezdjec_painted.webp',
-    '/textures/studio/tvfront_filmikprojektdlamultiego.webp',
-    '/textures/studio/tvfront_filmikprojektdlamultiego_painted.webp',
+    // Unique TV screen textures (Clients)
+    ...['cl-001', 'cl-002', 'cl-003', 'cl-004'].flatMap(id => [
+        `/textures/studio/tv_${id}.webp`,
+        `/textures/studio/tv_${id}_painted.webp`,
+    ]),
+    // Unique Monitor screen textures (GitHub)
+    ...['gh-001', 'gh-002', 'gh-003', 'gh-004', 'gh-005', 'gh-006', 'gh-007', 'gh-008'].flatMap(id => [
+        `/textures/studio/monitor_${id}.webp`,
+        `/textures/studio/monitor_${id}_painted.webp`,
+    ]),
+    // Unique Phone screen textures (Skills)
+    ...['sk-001', 'sk-002', 'sk-003', 'sk-004', 'sk-005', 'sk-006', 'sk-007', 'sk-008', 'sk-009', 'sk-010', 'sk-011', 'sk-012'].flatMap(id => [
+        `/textures/studio/phone_${id}.webp`,
+        `/textures/studio/phone_${id}_painted.webp`,
+    ]),
 ];
 
 // ============================================
@@ -308,32 +345,15 @@ export const filterTexturesByDevice = (list, usePainted) => {
     // 1. Identify all paths that have a _painted version available
     const paintedVersions = new Set(list.filter(p => p.includes('_painted.webp')));
     
-    // Also include the special css3logo case
-    const hasCss3Painted = list.some(p => p.includes('css3logo_painted.webp'));
-    
     return list.filter(path => {
         const isPainted = path.includes('_painted.webp');
-        const isCss3 = path.includes('css3logo_painted.webp');
         
-        // Find the "standard" version for this path if it's a painted one
-        let standardVersion = null;
         if (isPainted) {
-            standardVersion = path.replace('_painted.webp', '.webp');
-        } else if (isCss3) {
-            standardVersion = path.replace('css3logo_painted.webp', 'csslogo.webp');
-        } else {
-            // Check if this standard path HAS a painted version in the list
-            const pVersion = path.replace('.webp', '_painted.webp');
-            const css3Version = path.replace('csslogo.webp', 'css3logo_painted.webp');
-            if (list.includes(pVersion) || (path.includes('csslogo.webp') && hasCss3Painted)) {
-                // Return true to keep the standard version! Both desktop and mobile need it.
-                return true; 
-            }
-            // If it doesn't have a painted version, it's a static texture (always keep)
-            return true;
+            // It's a painted version — only keep if we want painted
+            return usePainted;
         }
-
-        // It's a painted version
-        return usePainted;
+        
+        // Standard version — always keep
+        return true;
     });
 };

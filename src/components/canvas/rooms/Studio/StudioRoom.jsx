@@ -591,10 +591,9 @@ const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled
     const matRef5 = useRef(); // -Z back
     const matRefs = [matRef0, matRef1, matRef2, matRef3, matRef4, matRef5];
 
-    // Check platform types
-    const isBlogMonitor = item.platform === 'blog';
-    const isTvMonitor = item.platform === 'youtube';
-    const isPhoneMonitor = item.platform === 'tiktok';
+    const isBlogMonitor = item.platform === 'github';
+    const isTvMonitor = item.platform === 'clients';
+    const isPhoneMonitor = item.platform === 'skills';
 
     // Determine the URL for the front texture (custom or default)
     const frontTextureUrl = item.frontTexture || (
@@ -618,7 +617,7 @@ const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled
     const frontTex = useLoader(TextureLoader, frontTextureUrl);
     const frontPaintedTex = useLoader(TextureLoader, paintedFrontTextureUrl);
 
-    // Load Monitor textures (Blog) - shell + painted
+    // Load Monitor textures (GitHub) - shell + painted
     const monitorBack = useLoader(TextureLoader, '/textures/studio/monitor_back.webp');
     const monitorTop = useLoader(TextureLoader, '/textures/studio/monitor_top.webp');
     const monitorBottom = useLoader(TextureLoader, '/textures/studio/monitor_bottom.webp');
@@ -630,7 +629,7 @@ const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled
     const monitorLeftPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_left_painted.webp');
     const monitorRightPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_right_painted.webp');
 
-    // Load TV textures (YouTube) - shell + painted
+    // Load TV textures (Clients) - shell + painted
     const tvBack = useLoader(TextureLoader, '/textures/studio/tv_back.webp');
     const tvTop = useLoader(TextureLoader, '/textures/studio/tv_top.webp');
     const tvBottom = useLoader(TextureLoader, '/textures/studio/tv_bottom.webp');
@@ -640,7 +639,7 @@ const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled
     const tvBottomPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/tv_bottom_painted.webp');
     const tvSidePainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/tv_side_painted.webp');
 
-    // Load Phone textures (TikTok) - shell + painted
+    // Load Phone textures (Skills) - shell + painted
     const phoneBack = useLoader(TextureLoader, '/textures/studio/phone_back.webp');
     const phoneSide = useLoader(TextureLoader, '/textures/studio/phone_side.webp');
     const phoneBackPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/phone_back_painted.webp');
